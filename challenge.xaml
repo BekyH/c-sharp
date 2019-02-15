@@ -1,0 +1,75 @@
+﻿<Window x:Class="quizapp.challenge"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:quizapp"
+        mc:Ignorable="d"
+        Title="challenge" Height="690" Width="800" Background="#04c582" WindowStyle="None">
+    <Border Background="Black" CornerRadius="20" Margin="20">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="minim" Content="-" Foreground="White" FontSize="40" Click="Minim_Click" Background="Black"></Button>
+                <Button Name="closeing" Content="X" Foreground="White" Background="Black" Click="Closeing_Click" Margin="10 0 0 0" FontSize="30" HorizontalAlignment="Left"></Button>
+
+            </StackPanel>
+            <Grid Height="180" Background="#6200EE" Width="650" x:Name="displayresult" Margin="26,0">
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="2"/>
+                </Grid.Effect>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="resultmsg" Foreground="White"  HorizontalAlignment="Center" Text="Final Score" FontSize="20" Margin="10" />
+                    <Button x:Name="cancelButton" Margin="440 0" Width="100" HorizontalAlignment="Right" Height="45" Background="Blue" Click="CancelButton_Click" VerticalAlignment="Top">
+                        <materialdesign:PackIcon Kind="Close" Foreground="White" Width="40" Height="40" Margin="5"/>
+                    </Button>
+                </StackPanel>
+                
+                <TextBox Name="scoredisplay" Width="400" Height="100" Margin="20 10" HorizontalAlignment="Left" FontSize="18" Background="White" Foreground="Black"></TextBox>
+                
+            </Grid>
+            <StackPanel>
+                <Button x:Name="return_btn" Click="Return_btn_Click" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <materialdesign:PackIcon Foreground="White" Kind="ArrowLeft" Height="25" Width="25"></materialdesign:PackIcon>
+                </Button>
+            </StackPanel>
+            <StackPanel Margin="20 1">
+                <Label Content="Quiz challenge" Foreground="White" FontSize="25" HorizontalAlignment="Center"></Label>
+                <Separator></Separator>
+                <StackPanel Name="ch">
+                <Label Name="labelq" Background="#545d6a" Width="650" Margin="10" Foreground="White" Height="30"></Label>
+              
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="A" Foreground="White" FontSize="20"></Label>
+                    <RadioButton Name="rba" GroupName="opti"  Margin="10" Foreground="White"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="B" Foreground="White" FontSize="20"></Label>
+                    <RadioButton Name="rbb" GroupName="opti"  Margin="10" Foreground="White"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="C" Foreground="White" FontSize="20"></Label>
+                    <RadioButton Name="rbc" GroupName="opti"  Margin="10" Foreground="White"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="D" Foreground="White" FontSize="20">
+                    </Label>
+                    <RadioButton Name="rbd" GroupName="opti" Margin="10" Foreground="White"/>
+                </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="btn_start" Content="start" Click="Btn_start_Click" Margin="60,10" HorizontalAlignment="Left" Background="#545d6a" Foreground="White" Width="100" FontSize="18"/>
+                    <Button Name="btn_next" Content="Next" Click="Btn_next_Click" Margin="60,10" Background="#545d6a" Foreground="White" FontSize="18" Width="100" HorizontalAlignment="Right"></Button>
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="60,10">
+                    <Label Name="labelsc"  Content="score" Padding="2" Background="#545d6a" Width="100" Margin="10" FontSize="18" Foreground="White" Height="30"></Label>
+                    <Label Name="labelscoretxt"  Background="#545d6a" Width="100" Margin="10" Padding="2" FontSize="18" Foreground="White" Height="30"></Label>
+
+                </StackPanel>
+            </StackPanel>
+            
+
+        </StackPanel>
+    </Border>
+</Window>
